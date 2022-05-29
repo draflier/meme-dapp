@@ -7,8 +7,8 @@ async function main() {
   const contract = await contractFactory.deploy();
   await contract.deployed();
 
-  console.log("DrafMeme Contract deployed to:", contract.address);
-  console.log("DrafMeme Contract owner address:", owner.address);
+  console.log("DrafMemeFlat Contract deployed to:", contract.address);
+  console.log("DrafMemeFlat Contract owner address:", owner.address);
 }
 
 main()

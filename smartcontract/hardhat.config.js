@@ -1,4 +1,5 @@
 require("@nomiclabs/hardhat-waffle");
+require("@nomiclabs/hardhat-etherscan");
 require('dotenv').config();
 
 // This is a sample Hardhat task. To learn how to create your own go to
@@ -74,13 +75,19 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
       throwOnCallFailures: true,
       timeout: 1800000,
       allowUnlimitedContractSize: true,
-      accounts: ["119d17d02e7846ec8066fcbf2d2daaae4e774c892f4bfd5a58dc5288a93dce46"]
     },
     rinkeby: {
       url: "https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
-      accounts: ["a182030a6b1e20a5213b26c10d24cf1c9dcbb877b2a1dacb0e336161a0c9cd7c"]
+    },
+    truffdash: {
+      url: "http://localhost:24012/rpc",
     }
 
+  },
+  etherscan: {
+    apiKey: {
+      bscTestnet: '1J8PS5D71ZU65PRVK5ZY5Z2N2ZTRFHAYTS'
+    }
   },
   paths: {
     sources: './contracts',

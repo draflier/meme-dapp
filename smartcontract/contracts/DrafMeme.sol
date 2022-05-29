@@ -9,17 +9,17 @@ contract DrafMeme is ERC20, Ownable, ERC20Burnable {
     event tokensMinted(address indexed owner, uint256 amount, string message);
     event additionalTokensMinted(address indexed owner,uint256 amount,string message);
 
-    constructor() ERC20("DrafMeme", "DM") {
+    constructor() ERC20("DS Test Token", "DSTT") {
         _mint(msg.sender, 1000 * 10**decimals());
         emit tokensMinted(msg.sender, 1000 * 10**decimals(), "Initial supply of tokens minted.");
     }
 
-    function mint(address to, uint256 amount) public onlyOwner {
+    function mint(address to, uint256 amount) public {
         _mint(to, amount);
         emit additionalTokensMinted(msg.sender, amount, "Additional tokens minted.");
     }
 
-    function burn(uint256 amount) public override onlyOwner {
+    function burn(uint256 amount) public override {
         _burn(msg.sender, amount);
         emit tokensBurned(msg.sender, amount, "Tokens burned.");
     }
