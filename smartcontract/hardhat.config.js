@@ -81,12 +81,21 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
     },
     truffdash: {
       url: "http://localhost:24012/rpc",
+      throwOnTransactionFailures: true,
+      throwOnCallFailures: true,
+      timeout: 1800000,
+      allowUnlimitedContractSize: true,
+    },
+    polygon_mumbai: {
+      url: "https://rpc-mumbai.maticvigil.com",
     }
+    
 
   },
   etherscan: {
     apiKey: {
-      bscTestnet: '1J8PS5D71ZU65PRVK5ZY5Z2N2ZTRFHAYTS'
+      bscTestnet: '1J8PS5D71ZU65PRVK5ZY5Z2N2ZTRFHAYTS',
+      polygonMumbai: '1AZBW8BCZED1H2XPMH7I4HXFKYWSGBV95B'
     }
   },
   paths: {
